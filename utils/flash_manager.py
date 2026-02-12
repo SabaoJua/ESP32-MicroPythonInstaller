@@ -12,7 +12,7 @@ def erase_flash():
     
     if port:
         try:
-            esptool.main(["--chip", "esp32", "--port", port, "erase_flash"])
+            esptool.main(["--chip", "esp32", "--port", port, "erase-flash"])
             print("-------------------------------------------------------------------------------")
             print("  ✅ Flash apagada com sucesso. ✅")
             print("-------------------------------------------------------------------------------")
@@ -32,7 +32,7 @@ def install_firmware(firmware_file):
     port = find_serial_port()
     if port:
         try:
-            esptool.main(["--chip", "esp32", "--port", port, "--baud", "460800", "write_flash", "-z", "0x1000", firmware_file])
+            esptool.main(["--chip", "esp32", "--port", port, "--baud", "460800", "write-flash", "-z", "0x1000", firmware_file])
             print(FOOTER_TEXT)
         except Exception as e:
             print(f"Erro ao instalar o firmware no ESP32: {e}")

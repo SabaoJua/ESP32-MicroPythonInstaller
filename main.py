@@ -14,7 +14,7 @@ if __name__ == "__main__":
     system = platform.system()
     
     # Verificações específicas para Linux
-    if system != "Windows":
+    if system != "Windows" and system != "Darwin":
         # Verifica se o usuário está no grupo dialout
         if 'dialout' not in os.popen('groups').read():
             print("Para prosseguir, precisamos adicionar o usuário ao grupo dialout.")
